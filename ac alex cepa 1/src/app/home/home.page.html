@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Home
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-item>
+    <ion-label position="floating">Digite o CEP</ion-label>
+    <ion-input [(ngModel)]="cep" type="text"></ion-input>
+  </ion-item>
+  <ion-button expand="full" (click)="buscarCep()">Buscar CEP</ion-button>
+
+  <div *ngIf="endereco">
+    <p>Logradouro: {{ endereco.logradouro }}</p>
+    <p>Bairro: {{ endereco.bairro }}</p>
+    <p>Cidade: {{ endereco.localidade }}</p>
+    <p>Estado: {{ endereco.uf }}</p>
+  </div>
+
+  <ion-item>
+    <ion-label position="floating">Digite o Estado com 2 Dígitos</ion-label>
+    <ion-input [(ngModel)]="estado" type="text"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Digite a Cidade</ion-label>
+    <ion-input [(ngModel)]="cidade" type="text"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Digite a Rua</ion-label>
+    <ion-input [(ngModel)]="rua" type="text"></ion-input>
+  </ion-item>
+  <ion-button expand="full" (click)="buscarCep2()">Buscar CEP</ion-button>
+
+  <div *ngIf="cep2">
+    <p>CEP: {{ cep2 }}</p>
+    <p>Logradouro: {{ rua2 }}</p>
+    <p>Bairro: {{ bairro2 }}</p>
+    <p>Cidade: {{ cidade2 }}</p>
+    <p>Estado: {{ estado2 }}</p>
+  </div>
+</ion-content>
